@@ -1,0 +1,38 @@
+
+<div id="c_body">
+    <h1>Want to connect?</h1>
+    <a id="email" href="mailto:albert.garcia10180@gmail.com">albert.garcia10180@gmail.com</a>
+    <h4 class="il-b">Download resume &#x2192;</h4>
+    <a href="/img/albert_garcia_dec_2018.pdf" download ><button>Resume</button></a> 
+    <div id="resume_div">
+        <h4 >Or click here &#x2193; to view</h4>
+        <img id="resume" src="/img/resume.png" alt="Albert's Resume">
+    </div>
+    <h4 >Click the icons below to redirect</h4>
+    <a href="https://github.com/albert-garcia316"><img class="link" src="/img/github.png" alt="Albert's Resume"></a> 
+    <a href="https://www.linkedin.com/in/albertgarcia3/"><img class="link" src="/img/linkedin.png" alt="Albert's Resume"></a> 
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById('myModal');
+
+    var img = document.getElementById('resume');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+</script>

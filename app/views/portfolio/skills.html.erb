@@ -1,0 +1,111 @@
+<div id="tech_body">
+    <div class="groups">
+        <h3>Languages</h3>
+        <p>Hover to display name:</p>
+        <div class="tech_box">
+            <div class="tooltip"><img class="l_slides" src="/img/languages.jpeg" alt="Cover"> <span class="tooltiptext">Languages</span></div>
+            <div class="tooltip"><img class="l_slides" src="/img/html.png" alt="HTML5"> <span class="tooltiptext">HTML5</span></div>
+            <div class="tooltip"><img class="l_slides" src="/img/css3.png" alt="CSS#"><span class="tooltiptext">CSS3</span></div>
+            <div class="tooltip"><img class="l_slides" src="/img/javascript_1.png" alt="Javascript"><span class="tooltiptext">Javascript</span></div>
+            <div class="tooltip"><img class="l_slides" src="/img/ts.png" alt="Typescript"><span class="tooltiptext">Typescript</span></div>
+            <div class="tooltip"><img class="l_slides" src="/img/python.png" alt="Python"><span class="tooltiptext">Python</span></div>
+            <div class="tooltip"><img class="l_slides" src="/img/ruby.png" alt="Ruby"><span class="tooltiptext">Ruby</span></div>
+            <div class="tooltip"><img class="l_slides" src="/img/sql_icon.png" alt="SQL"><span class="tooltiptext">SQL</span></div>
+        </div>
+    </div>
+    <div class="groups">
+        <h3>Frameworks</h3>
+        <p>Hover to display name:</p>
+        <div class="tech_box">
+            <div class="tooltip"><img class="f_slides" src="/img/frameworks.png" alt="Cover"> <span class="tooltiptext">Frameworks</span></div>
+            <div class="tooltip"><img class="f_slides" src="/img/angular.png" alt="Angular"> <span class="tooltiptext">Angular.js</span></div>
+            <div class="tooltip"><img class="f_slides" src="/img/express.png" alt="Express.js"><span class="tooltiptext">Express.js</span></div>
+            <div class="tooltip"><img class="f_slides" src="/img/socket.png" alt="Socket.io"><span class="tooltiptext">Socket.io</span></div>
+            <div class="tooltip"><img class="f_slides" src="/img/django.png" alt="Django"><span class="tooltiptext">Django</span></div>
+            <div class="tooltip"><img class="f_slides" src="/img/flask.png" alt="Flask"><span class="tooltiptext">Flask</span></div>
+            <div class="tooltip"><img class="f_slides" src="/img/rails.png" alt="Rails"><span class="tooltiptext">Rails</span></div>
+            <div class="tooltip"><img class="f_slides" src="/img/jquery.png" alt="Jquery"><span class="tooltiptext">Jquery</span></div>
+        </div>
+    </div>
+    <div class="groups">
+        <h3>Databases</h3>
+        <p>Hover to display name:</p>
+        <div class="tech_box">
+            <div class="tooltip"><img class="d_slides" src="/img/databases.png" alt="Cover"> <span class="tooltiptext">Databases</span></div>
+            <div class="tooltip"><img class="d_slides" src="/img/mysql.png" alt="MySQL"> <span class="tooltiptext">MySQL</span></div>
+            <div class="tooltip"><img class="d_slides" src="/img/SQLite.png" alt="SQLite"><span class="tooltiptext">SQLite</span></div>
+            <div class="tooltip"><img class="d_slides" src="/img/postgres.png" alt="Postgres"><span class="tooltiptext">Postgres</span></div>
+            <div class="tooltip"><img class="d_slides" src="/img/mongodb.png" alt="MongoDB"><span class="tooltiptext">MongoDB</span></div>
+        </div>
+    </div>
+    <div class="groups">
+    <h3>Other</h3>
+    <p>Hover to display name:</p>
+    <div class="tech_box">
+        <div class="tooltip"><img class="o_slides" src="/img/ajax_1.png" alt="Ajax"> <span class="tooltiptext">Ajax.js</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/api.png" alt="API"><span class="tooltiptext">API</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/aws.png" alt="AWS"><span class="tooltiptext">AWS</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/aws-ec2.png" alt="EC2"><span class="tooltiptext">EC2</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/github.png" alt="GitHub"><span class="tooltiptext">GitHub</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/nodejs.png" alt="NodeJS"><span class="tooltiptext">NodeJS</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/postman.png" alt="Postman"><span class="tooltiptext">Postman</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/npm.png" alt="NPM"><span class="tooltiptext">NPM</span></div>
+        <div class="tooltip"><img class="o_slides" src="/img/json.png" alt="Json"><span class="tooltiptext">Json</span></div>
+    </div>
+</div>
+
+<script>
+    var slideIndexone = 0;
+    var slideIndextwo = 0;
+    var slideIndexthree = 0;
+    var slideIndexfour = 0;
+    carouselone();
+    carouseltwo();
+    carouselthree();
+    carouselfour();
+
+    function carouselone() {
+        var i;
+        var x = document.getElementsByClassName("l_slides");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+        }
+        slideIndexone++;
+        if (slideIndexone > x.length) {slideIndexone = 1} 
+        x[slideIndexone-1].style.display = "block"; 
+        setTimeout(carouselone, 2000);
+    }
+    function carouseltwo() {
+        var i;
+        var x = document.getElementsByClassName("f_slides");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+        }
+        slideIndextwo++;
+        if (slideIndextwo > x.length) {slideIndextwo = 1} 
+        x[slideIndextwo-1].style.display = "block"; 
+        setTimeout(carouseltwo, 2000);
+    }
+    function carouselthree() {
+        var i;
+        var x = document.getElementsByClassName("d_slides");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+        }
+        slideIndexthree++;
+        if (slideIndexthree > x.length) {slideIndexthree = 1} 
+        x[slideIndexthree-1].style.display = "block"; 
+        setTimeout(carouselthree, 2000);
+    }
+    function carouselfour() {
+        var i;
+        var x = document.getElementsByClassName("o_slides");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+        }
+        slideIndexfour++;
+        if (slideIndexfour > x.length) {slideIndexfour = 1} 
+        x[slideIndexfour-1].style.display = "block"; 
+        setTimeout(carouselfour, 2000);
+    }
+</script>

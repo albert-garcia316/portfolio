@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Albert Garcia</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div class="nav nav_lg">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/portfolio/about">About</a></li>
+        <li><a href="/portfolio/contact">Connect</a></li>
+        <li><a href="/portfolio/projects">Projects</a></li>
+        <li><a href="/portfolio/skills">Technologies</a></li>
+    </ul>
+</div>
+<div class="nav nav_sm">
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn btn"><img class="btn" src="/img/menu.png" alt=""></button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="/">Home</a>
+            <a href="/portfolio/about">About</a>
+            <a href="/portfolio/contact">Connect</a>
+            <a href="/portfolio/projects">Projects</a>
+            <a href="/portfolio/skills">Technologies</a>
+        </div>
+    </div>
+</div>
+
+
+
+<%= yield %>
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.btn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.toggle('show');
+            }
+          }
+        }
+      }
+
+</script>
+</body>
+</html>

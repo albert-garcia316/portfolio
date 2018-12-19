@@ -1,0 +1,123 @@
+<div id="p_body">
+    <h1>My Projects</h1>
+    <h2>Draftkit</h2>
+
+    <div id="draft">
+        <div class="desc">
+            <p>Fantasy football app developed in Python using Django</p>
+            <p>2 main features:</p>
+            <p class="pl-20">A) help in planning for fantasy league.</p>
+            <p class="pl-20">B) Ability to draft your own team.</p>
+            <p>Highlights:</p>
+            <p class="pl-20">1) Main showcase is ability to query</p>
+            <p class="pl-20">2) Styled using only CSS</p>
+            <p class="pl-20">3) Single page by way of if-statement logic, no ajax</p>
+        </div>
+        <h4 class="draftText">front page showing login/register icons and base query</h4>
+        <h4 class="draftText">CSS styled dropdown menu to show filter options</h4>
+        <h4 class="draftText">Logged in User Creating a lineup, selected players no longer available</h4>
+        <img class="draftSlides" src="/img/draftkit_1.jpg" alt="">
+        <img class="draftSlides" src="/img/draftkit_2.jpg" alt="">
+        <img class="draftSlides" src="/img/draftkit_3.jpg" alt="">
+        <div class="controller">    
+            <button class="left" onclick="plusDivsDraft(-1)">&#10094;</button>
+            <button class="right" onclick="plusDivsDraft(1)">&#10095;</button>
+            <div class="dot_div">
+                <div class="dot ddot white" onclick="currentDivDraft(1)"></div>
+                <div class="dot ddot white" onclick="currentDivDraft(2)"></div>
+                <div class="dot ddot" onclick="currentDivDraft(3)"></div>
+
+            </div>
+        </div>
+    </div>
+    <h2><a href="http://socket-man.com">socket-man.com</a></h2>
+    <div id="socket">
+        <div class="desc">
+            <p>Multiplayer Pac-man type game built with Express.js, JavaScript, and socket.io, and HTML/CSS</p>
+            <p>Highlights:</p>
+            <p class="pl-20">1) Used sockets to pass the score of other players in real time</p>
+            <p class="pl-20">2) Group Project using GitHub to manage the repository</p>
+            <p class="pl-20">3) Personal Role: Mainly enemy movement logic and CSS</p>
+        </div>
+        <h4 class="socketText">Handshake to establish the connection</h4>
+        <h4 class="socketText">Delayed start for enemies, on still at their base</h4>
+        <h4 class="socketText">Game started with enemies moving towards the player</h4>
+        <h4 class="socketText">Mobile version with tap/clickable buttons</h4>
+        <img class="socketSlides" src="/img/socketman_1.jpg" alt="">
+        <img class="socketSlides" src="/img/socketman_2.jpg" alt="">
+        <img class="socketSlides" src="/img/socketman_3.jpg" alt="">
+        <img class="socketSlides" src="/img/socketman_4.jpg" alt="">
+        <div class="controller">    
+            <button class="left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="right" onclick="plusDivs(1)">&#10095;</button>
+            <div class="dot_div">
+                <div class="dot sdot white" onclick="currentDiv(1)"></div>
+                <div class="dot sdot white" onclick="currentDiv(2)"></div>
+                <div class="dot sdot" onclick="currentDiv(3)"></div>
+                <div class="dot sdot" onclick="currentDiv(4)"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDivD(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("socketSlides");
+        var y = document.getElementsByClassName("socketText");
+        var dots = document.getElementsByClassName("sdot");
+        if (n > x.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+            y[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" white", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        y[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " white";
+    }
+
+    var slideIndexDraft = 1;
+    showDivsDraft(slideIndexDraft);
+
+    function plusDivsDraft(n) {
+        showDivsDraft(slideIndexDraft += n);
+    }
+    function currentDivDraft(n) {
+        showDivsDraft(slideIndexDraft = n);
+    }
+
+    function showDivsDraft(n) {
+        var i;
+        var x = document.getElementsByClassName("draftSlides");
+        var y = document.getElementsByClassName("draftText");
+        var dots = document.getElementsByClassName("ddot");
+        if (n > x.length) {slideIndexDraft = 1}    
+        if (n < 1) {slideIndexDraft = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+            y[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" white", "");
+        }
+        x[slideIndexDraft-1].style.display = "block";
+        y[slideIndexDraft-1].style.display = "block";
+        dots[slideIndexDraft-1].className += " white";
+    }
+
+</script>
